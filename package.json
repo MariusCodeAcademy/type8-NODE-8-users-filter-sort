@@ -1,0 +1,32 @@
+{
+  "name": "node-8-users-filter-sort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariusCodeAcademy/type8-NODE-8-users-filter-sort.git"
+  },
+  "keywords": [],
+  "author": "Marius K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariusCodeAcademy/type8-NODE-8-users-filter-sort/issues"
+  },
+  "homepage": "https://github.com/MariusCodeAcademy/type8-NODE-8-users-filter-sort#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}

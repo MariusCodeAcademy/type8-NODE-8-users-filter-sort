@@ -5,7 +5,7 @@
 1. init git, github
 2. npm init -y
 3. npm i express morgan dotenv cors mongodb
-4. .gitingonre failas jame node_module .env
+4. .gitignore failas jame node_module .env
 5. npm i eslint --save-dev
 6. npm init @eslint/config
 7. src/server.js - aprasyti express aplikacija
