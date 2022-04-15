@@ -9,6 +9,8 @@ userRoutes.get('/users', async (req, res) => {
     // prisijungti
     await dbClient.connect();
     // atlikti veiksma
+    // parsiusti visus usersius is node7 ir grazinti json [] pavidalu
+
     console.log('connected');
     res.json('get users route');
   } catch (error) {
