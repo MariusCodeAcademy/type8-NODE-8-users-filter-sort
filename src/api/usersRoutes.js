@@ -23,4 +23,27 @@ userRoutes.get('/users', async (req, res) => {
   }
 });
 
+// GET /api/users/sort-age/
+userRoutes.get('/users/sort-age/', async (req, res) => {
+  try {
+    const options = {
+      sort: { age: 1 },
+    };
+    // prisijungti
+    await dbClient.connect();
+    // atlikti veiksma
+    // parsiusti visus usersius is node7 ir grazinti json [] pavidalu
+    const collection = dbClient.db('node7').collection('users');
+    const usersArr = await collection.find({}, options).toArray();
+    console.log('connected');
+    res.json(usersArr);
+  } catch (error) {
+    console.error('error in get users', error);
+    res.status(500).json('something is wrong');
+  } finally {
+    // uzdaryti prisijungima
+    await dbClient.close();
+  }
+});
+
 module.exports = userRoutes;
