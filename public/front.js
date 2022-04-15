@@ -4,7 +4,7 @@ const listEl = document.getElementById('list');
 const sortAgeBtn = document.getElementById('ageSort');
 const orderDispEl = sortAgeBtn.querySelector('span');
 
-let sortOrder = 'ASC';
+let sortOrder = 'DESC';
 orderDispEl.textContent = sortOrder;
 
 function renderUsers(userArr) {
@@ -29,14 +29,14 @@ async function getUsers(urlEnd) {
   renderUsers(dataInJs);
 }
 
-getUsers('users');
+getUsers('users/sort-age/ASC');
 
 sortAgeBtn.addEventListener('click', () => {
   // kai paspaudiam mygtuka pakeisti jame esanti zodeli ASC i DESC
 
+  getUsers(`users/sort-age/${sortOrder}`);
+
   sortOrder = sortOrder === 'ASC' ? 'DESC' : 'ASC';
   orderDispEl.textContent = sortOrder;
-
-  getUsers('users/sort-age');
   console.log('sorting');
 });

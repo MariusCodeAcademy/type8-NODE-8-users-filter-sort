@@ -23,11 +23,14 @@ userRoutes.get('/users', async (req, res) => {
   }
 });
 
-// GET /api/users/sort-age/
-userRoutes.get('/users/sort-age/', async (req, res) => {
+// GET /api/users/sort-age/:sortOrder ASC DESC
+userRoutes.get('/users/sort-age/:sortOrder', async (req, res) => {
   try {
+    const { sortOrder } = req.params;
+    let order = 1;
+    order = sortOrder === 'DESC' ? -1 : 1;
     const options = {
-      sort: { age: 1 },
+      sort: { age: order },
     };
     // prisijungti
     await dbClient.connect();
@@ -45,5 +48,11 @@ userRoutes.get('/users/sort-age/', async (req, res) => {
     await dbClient.close();
   }
 });
+
+// GET /api/users/students - parsiusncia tik studentus
+// front mygtukas "show students" paspaude parsiunciam tik studentus
+
+// prisideti 3 skirtingus miestus, po viena kiekvienam studentui
+// GET /api/users/town/London - parsiuncia tik is to miesto
 
 module.exports = userRoutes;
