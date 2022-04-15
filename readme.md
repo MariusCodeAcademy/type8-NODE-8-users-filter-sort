@@ -14,3 +14,4 @@
 10. http.rest - routes
 11. src/api/ - sukurti resurso faila pvz usersRoutes.js
 12. src/api/usersRoutes.js - sukuriam router express.Router() isexportuojam su module.exports default exportu
+13. Create and export mongo client
