@@ -10,9 +10,10 @@ userRoutes.get('/users', async (req, res) => {
     await dbClient.connect();
     // atlikti veiksma
     // parsiusti visus usersius is node7 ir grazinti json [] pavidalu
-
+    const collection = dbClient.db('node7').collection('users');
+    const usersArr = await collection.find().toArray();
     console.log('connected');
-    res.json('get users route');
+    res.json(usersArr);
   } catch (error) {
     console.error('error in get users', error);
     res.status(500).json('something is wrong');
